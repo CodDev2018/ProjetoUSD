@@ -3,6 +3,9 @@ const bodyParser = require('body-parser')
 const schedule = require('node-schedule')
 const app = express()
 
+//PUBLIC 
+app.use(express.static('./public'))
+
 //BODY PARSER
 app.use(bodyParser.json())
 
