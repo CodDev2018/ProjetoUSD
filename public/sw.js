@@ -1,4 +1,4 @@
-const staticCacheName = 'usd_2019_06_23_08_12'
+const staticCacheName = 'usd_2019_07_09_06_37'
 
 this.addEventListener('install', event => {
     this.skipWaiting();
@@ -8,6 +8,8 @@ this.addEventListener('install', event => {
         .then(cache => {
             return cache.addAll([
                 '/',
+                '/sobre',
+                '/config',
                 '/manifest.json',
                 '/images/logo.png',
                 '/js/functions.js',
