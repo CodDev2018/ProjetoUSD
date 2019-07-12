@@ -11,6 +11,7 @@ router.get('/cotacao/hoje', (req, res) => {
             })
         }
         return res.status(200).json({
+            id: cotacao._id,
             compra: cotacao.compra,
             venda: cotacao.venda,
             data: cotacao.data

@@ -2,15 +2,28 @@ let cotacao = {}
 
 let invertido = false
 
-window.addEventListener('load', (event) => {
-    fetch('/api/cotacao/hoje')
-        .then(res => res.json())
-        .then(dados => {
-            cotacao = dados
-            atualizarTela(cotacao)
-        })
-})
+window.addEventListener('load', async () => {
+    initDataBase()
+    const cotacaoAtual = await buscarCotacaoAtual()
+    const lastCotacao = await getLastCotacao()
+    if (lastCotacao && cotacaoAtual && lastCotacao.data < cotacaoAtual.data) {
+        cotacao = cotacaoAtual
+        await saveCotacao(cotacao)
+        atualizarTela(cotacao)
+        return
+    }
+    
+    if (lastCotacao) {
+        cotacao = lastCotacao
+        atualizarTela(cotacao)
+        return 
+    }
 
+    const lancarManualmente = confirm('Não foi possível recuperar a cotação. Deseja informar uma cotação manualmente?')
+    if (lancarManualmente) {
+        window.location.locate = '/config'
+    }
+})
 document.getElementById('btnInverter').addEventListener('click', inverter)
 document.forms['conversor'].addEventListener('submit', converter)
 
