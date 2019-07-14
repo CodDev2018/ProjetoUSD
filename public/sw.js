@@ -1,4 +1,4 @@
-const staticCacheName = 'usd_2019_06_23_08_12'
+const staticCacheName = 'usd_2019_07_14_09_19'
 
 this.addEventListener('install', event => {
     this.skipWaiting();
@@ -10,9 +10,15 @@ this.addEventListener('install', event => {
                 '/',
                 '/manifest.json',
                 '/images/logo.png',
-                '/js/functions.js',
+                '/templates/conversor.html',
+                '/templates/sobre.html',
+                '/templates/configuracoes.html',
+                '/js/router.js',
+                '/js/config.js',
+                '/js/conversor.js',
                 '/js/vendor/jquery.mask.min.js',
                 '/js/vendor/fontawesome.min.js',
+                '/js/vendor/navigo.min.js',
                 'https://code.jquery.com/jquery-3.3.1.slim.min.js',
                 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
                 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',

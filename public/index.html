@@ -36,11 +36,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/index.html">Início</a>
+                        <li class="nav-item nav-conversor">
+                            <a class="nav-link" href="conversor" data-navigo>
+                                <i class="fa fa-home"></i>
+                                Início
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/sobre.html">Sobre</a>
+                        <li class="nav-item nav-sobre">
+                            <a class="nav-link" href="sobre" data-navigo>
+                                <i class="fa fa-question-circle"></i>
+                                Ajuda
+                            </a>
+                        </li>
+                        <li class="nav-item nav-configuracoes">
+                            <a class="nav-link" href="configuracoes" data-navigo>
+                                <i class="fa fa-cog"></i>
+                                Configurações
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -48,78 +60,8 @@
         </nav>
     </header>
 
-    <main class="flex-shrink-0">
-        <section class="container">
-            <form name="conversor">
-                <h2 class="text-center">
-                    Conversor
-                    <hr>
-                </h2>
-                <div class="form-group row">
-                    <label for="inputEntrada" class="col-2 col-form-label text-right"><strong>R$</strong></label>
-                    <div class="col-10">
-                        <input type="text" class="form-control form-control-lg" id="inputEntrada" placeholder="0,00"
-                            data-mask="#.##0,00" data-mask-reverse="true">
-                    </div>
-                </div>
+    <main class="flex-shrink-0 js-content">
 
-                <div class="form-group row">
-                    <div class="col-10 offset-2">
-                        <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="operacao" id="radioCompra" value="compra" autocomplete="off"
-                                    checked> Compra
-                            </label>
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="operacao" id="radioVenda" value="venda" autocomplete="off">
-                                Venda
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-4 offset-2">
-                        <button type="button" class="btn btn-secondary btn-block" id="btnInverter">
-                            <i class="fa fa-exchange-alt"></i>
-                            Inverter
-                        </button>
-                    </div>
-                    <div class="col-6">
-                        <button type="submit" class="btn btn-success btn-block">
-                            <i class="fa fa-calculator"></i>
-                            Converter
-                        </button>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="inputResultado" class="col-2 col-form-label text-right"><strong>US$</strong></label>
-                    <div class="col-10">
-                        <input type="text" class="form-control form-control-lg bg-dark text-light" readonly
-                            id="inputResultado" value="0,00">
-                    </div>
-                </div>
-
-            </form>
-
-            <div style="margin-top: 60px">
-                <h5 class="text-muted text-center">
-                    <strong>Cotação atual</strong>
-                    <hr>
-                </h5>
-                <p class="text-muted text-center">
-                    <strong>US$</strong> 1,00 =>
-                    <strong>R$</strong> <span id="cotacao-compra">0,00</span> (Compra) |
-                    <strong>R$</strong> <span id="cotacao-venda">0,00</span> (Venda)
-                </p>
-                <p class="text-muted text-center">
-                    <small>Atualizado em <span id="cotacao-data">XX/XX/XXXX</span>, pela API do
-                        <a href="https://www.bcb.gov.br/" target="_blanck">Banco Central</a>.
-                    </small>
-                </p>
-            </div>
-        </section>
     </main>
 
     <footer class="footer mt-auto py-3 bg-dark text-light">
@@ -142,7 +84,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="/js/vendor/jquery.mask.min.js"></script>
     <script src="/js/vendor/fontawesome.min.js"></script>
-    <script src="/js/functions.js"></script>
+    <script src="/js/vendor/navigo.min.js"></script>
+
+    <script src="/js/router.js"></script>
+    <script src="/js/conversor.js"></script>
+    <script src="/js/config.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js')

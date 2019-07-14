@@ -1,0 +1,51 @@
+<section class="container">
+        <form name="config">
+            <h2 class="text-center">
+                Configurações
+                <hr>
+            </h2>
+            <div class="row">
+                <p class="col-12">
+                    Informe o valor da cotação do Dólar que deseja utilizar para as suas conversões.
+                    O valor informado é relativo a quantidade de R$ para negociar US$ 1,00.
+                </p>
+            </div>
+            <div class="form-group row">
+                <label for="inputCompra" class="col-3 col-form-label text-right"><strong>Compra:</strong></label>
+                <div class="col-9">
+                    <input type="text" class="form-control form-control-lg" id="inputCompra" placeholder="0,0000"
+                        data-mask="#.##0,0000" data-mask-reverse="true">
+                </div>
+            </div>
+    
+            <div class="form-group row">
+                <label for="inputCompra" class="col-3 col-form-label text-right"><strong>Venda:</strong></label>
+                <div class="col-9">
+                    <input type="text" class="form-control form-control-lg" id="inputVenda" placeholder="0,0000"
+                        data-mask="#.##0,0000" data-mask-reverse="true">
+                </div>
+            </div>
+    
+            <div class="form-group row">
+                <div class="col-6">
+                    <button type="reset" class="btn btn-danger btn-block">
+                        <i class="fa fa-times"></i>
+                        Limpar
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button type="submit" class="btn btn-success btn-block">
+                        <i class="fa fa-check"></i>
+                        Salvar
+                    </button>
+                </div>
+            </div>
+    
+        </form>
+    
+        <div class="mt-2">
+            <p class="col-12 text-info">
+               * Enquanto este formulário estiver preenchido a cotação não será atualizada automaticamente.
+            </p>
+        </div>
+    </section>
